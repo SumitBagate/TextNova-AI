@@ -1,0 +1,41 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Node.js dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.vite/
+coverage/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python environments, caches, and build output
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Runtime-generated backend files
+textnova backend/uploads/
+textnova backend/documents/
+textnova backend/data/grades/
+textnova backend/temp-*
+
+# Editor and operating-system files
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.suo

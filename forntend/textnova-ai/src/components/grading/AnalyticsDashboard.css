@@ -1,0 +1,131 @@
+.analytics-dashboard {
+  padding: 24px;
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(17, 24, 39, 0.92)
+  );
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.analytics-dashboard h3 {
+  margin: 0 0 20px 0;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.analytics-card {
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition);
+  border-left: 4px solid transparent;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.analytics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 118, 110, 0.1),
+    rgba(15, 118, 110, 0.05)
+  );
+  border-left-color: var(--primary);
+}
+
+.card-secondary {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.1),
+    rgba(14, 165, 233, 0.05)
+  );
+  border-left-color: var(--secondary);
+}
+
+.card-success {
+  background: linear-gradient(
+    135deg,
+    rgba(22, 163, 74, 0.1),
+    rgba(22, 163, 74, 0.05)
+  );
+  border-left-color: var(--success);
+}
+
+.card-warning {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.1),
+    rgba(245, 158, 11, 0.05)
+  );
+  border-left-color: var(--accent);
+}
+
+.card-danger {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1),
+    rgba(220, 38, 38, 0.05)
+  );
+  border-left-color: #dc2626;
+}
+
+.card-icon {
+  font-size: 28px;
+  min-width: 40px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  margin: 4px 0 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .analytics-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .card-icon {
+    font-size: 24px;
+  }
+
+  .card-value {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,497 @@
+.converter-page {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at 10% 10%,
+    #1f2937 0%,
+    #111827 45%,
+    #0b1220 100%
+  );
+  padding: 40px 20px;
+}
+
+.converter-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(
+    165deg,
+    rgba(18, 30, 46, 0.95),
+    rgba(12, 21, 36, 0.95)
+  );
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+.converter-header {
+  background:
+    radial-gradient(
+      circle at 16% 20%,
+      rgba(34, 211, 238, 0.26),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #0f172a 0%, #1f2937 60%, #111827 100%);
+  color: white;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.converter-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.converter-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  background: #1a2430;
+}
+
+.tab {
+  flex: 1;
+  padding: 14px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tab:hover {
+  background: rgba(45, 212, 191, 0.12);
+}
+
+.tab.active {
+  color: var(--primary);
+  border-bottom-color: #67e8f9;
+}
+
+.converter-section,
+.editor-section,
+.tools-section {
+  padding: 32px 24px;
+}
+
+.file-input-section {
+  margin-bottom: 24px;
+}
+
+.drag-drop {
+  border: 2px dashed rgba(34, 211, 238, 0.6);
+  border-radius: 14px;
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--bg-light);
+}
+
+.drag-drop:hover {
+  border-color: var(--secondary);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.drag-drop.dragging {
+  border-color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+  transform: scale(1.01);
+}
+
+.drag-drop input {
+  display: none;
+}
+
+.drag-drop label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.drag-drop .icon {
+  font-size: 48px;
+}
+
+.drag-drop p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.drag-drop small {
+  display: block;
+  color: var(--text-light);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.selected-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  border-radius: 8px;
+  margin-top: 12px;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.selected-file button {
+  background: rgba(220, 38, 38, 0.2);
+  border: none;
+  color: #dc2626;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.selected-file button:hover {
+  background: rgba(220, 38, 38, 0.3);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option.option-wide {
+  grid-column: 1 / -1;
+}
+
+.option label {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.option select {
+  padding: 8px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: var(--transition);
+  background: #0f172a;
+  color: var(--text-dark);
+}
+
+.option select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+.option.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.option.checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.option.checkbox label {
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+.method-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.method-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #0f172a;
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: 42px;
+}
+
+.method-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.method-btn.active {
+  border-color: var(--primary);
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--primary);
+}
+
+.method-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.method-hint {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.progress-section {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.stage-indicator {
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-group {
+  margin-bottom: 16px;
+}
+
+.progress-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #0f172a;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+}
+
+.progress-group span {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: rgba(220, 38, 38, 0.2);
+  color: #dc2626;
+}
+
+.btn-secondary:hover {
+  background: rgba(220, 38, 38, 0.3);
+}
+
+.result-message {
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.result-message.success {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.result-message.error {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.conversion-actions {
+  margin-top: 16px;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.secondary-button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  background: #0f172a;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: rgba(15, 118, 110, 0.08);
+  transform: translateY(-1px);
+}
+
+.secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editor-section {
+  padding: 24px;
+}
+
+.tools-section {
+  padding: 24px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .converter-page {
+    padding: 24px 12px;
+  }
+
+  .converter-container {
+    border-radius: 14px;
+  }
+
+  .converter-header {
+    padding: 24px 16px;
+  }
+
+  .converter-header h2 {
+    font-size: 22px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    flex: 1 1 33%;
+    min-width: 120px;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .converter-section,
+  .editor-section,
+  .tools-section {
+    padding: 20px 14px;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drag-drop {
+    padding: 24px 16px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+}

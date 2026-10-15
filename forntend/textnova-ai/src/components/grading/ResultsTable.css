@@ -1,0 +1,146 @@
+.results-table-container {
+  padding: 24px;
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(17, 24, 39, 0.92)
+  );
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.results-table-container h3 {
+  margin: 0 0 16px 0;
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table thead {
+  background: linear-gradient(
+    120deg,
+    rgba(34, 211, 238, 0.18),
+    rgba(129, 140, 248, 0.2)
+  );
+}
+
+.results-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.results-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.results-table tbody tr {
+  transition: var(--transition);
+}
+
+.results-table tbody tr:hover {
+  background: rgba(34, 211, 238, 0.08);
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-name {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.marks {
+  text-align: center;
+  font-weight: 500;
+}
+
+.total-marks {
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+}
+
+.percentage {
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.status-pass {
+  background: rgba(22, 163, 74, 0.2);
+  color: #16a34a;
+}
+
+.status-badge.status-fail {
+  background: rgba(220, 38, 38, 0.2);
+  color: #dc2626;
+}
+
+.status-badge.status-average {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.status-pass {
+  background: rgba(22, 163, 74, 0.05);
+}
+
+.status-fail {
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.status-average {
+  background: rgba(245, 158, 11, 0.05);
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    font-size: 12px;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 8px;
+  }
+
+  .student-name {
+    min-width: 120px;
+  }
+}

@@ -1,0 +1,248 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+    circle at 10% 10%,
+    #1f2937 0%,
+    #111827 45%,
+    #0b1220 100%
+  );
+}
+
+.hero-section {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(34, 211, 238, 0.35),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #0f172a 0%, #1e293b 55%, #111827 100%);
+  color: white;
+  padding: 74px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hero-content h1 {
+  margin: 0 0 12px 0;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+.hero-content p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 12px auto 0;
+  animation: fadeSlideUp 0.55s ease both;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  color: #fecaca;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fecaca;
+}
+
+.status-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(15, 118, 110, 0.1),
+    rgba(14, 165, 233, 0.1)
+  );
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 8px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  font-weight: 500;
+  animation: fadeSlideUp 0.3s ease both;
+}
+
+.spinner-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(15, 118, 110, 0.3);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+.clear-btn {
+  display: block;
+  margin: 24px auto 0;
+  padding: 12px 24px;
+  background: linear-gradient(120deg, var(--accent), #f97316);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.login-required-card {
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(17, 24, 39, 0.92)
+  );
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.login-required-card h3 {
+  margin: 0 0 10px;
+}
+
+.login-required-card p {
+  margin: 0 0 16px;
+  color: var(--text-light);
+}
+
+.report-btn {
+  padding: 12px 18px;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    rgba(34, 211, 238, 0.18),
+    rgba(129, 140, 248, 0.2)
+  );
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.report-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.report-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.clear-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(17, 24, 39, 0.92)
+  );
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .page-container {
+    padding: 24px 16px;
+  }
+
+  .status-banner,
+  .error-banner {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .clear-btn {
+    width: 100%;
+  }
+
+  .report-actions {
+    flex-direction: column;
+  }
+
+  .report-btn {
+    width: 100%;
+  }
+}
