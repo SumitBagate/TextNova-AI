@@ -535,7 +535,12 @@ Respond in JSON format:
  */
 async function validateApiKey() {
   try {
-    const response = await hfClient.get("/");
+    await axios.get("https://huggingface.co/api/whoami-v2", {
+      headers: {
+        Authorization: `Bearer ${HF_API_KEY}`,
+      },
+      timeout: 10000,
+    });
     return true;
   } catch (error) {
     console.error("API key validation failed:", error.message);
