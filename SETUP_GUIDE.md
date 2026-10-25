@@ -113,13 +113,20 @@ npm install
 #### Create `.env.local` in `forntend/textnova-ai/`:
 
 ```env
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-REACT_APP_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 ```
+
+The Firebase web API key is an identifier required by the browser SDK, not a
+server secret. Keep `.env.local` out of Git, restrict the key in Google Cloud
+API credentials to the Firebase APIs and approved web origins, and secure data
+with Firebase Authentication and Security Rules. If a key was committed or
+reported by Vercel, rotate it in Google Cloud and update the local/deployment
+environment variables; do not paste the replacement into source code.
 
 ### 3. Update App.jsx
 
@@ -261,7 +268,16 @@ Frontend runs on: `http://localhost:5173` (Vite default)
 1. Push code to GitHub
 2. Go to [Vercel.com](https://vercel.com)
 3. Import project from GitHub
-4. Set environment variables in `.env`
+4. Set these environment variables in the Vercel project settings (not in a
+   committed file):
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGE_BUCKET`
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
+   - `VITE_FIREBASE_MEASUREMENT_ID` (optional)
+   - `VITE_API_BASE_URL`
 5. Deploy
 
 ### Update API Base URL
